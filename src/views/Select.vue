@@ -55,7 +55,7 @@
         align-items: center;
         justify-content: center;
 
-        font-family: 'Lato', 'Noto Sans', sans-serif;
+        font-family: 'Roboto', 'Lato', 'Noto Sans', sans-serif;
         font-weight: normal;
         font-size: 44px;
 

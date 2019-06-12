@@ -66,6 +66,37 @@
         src: url('assets/fonts/Lato-LightItalic.ttf');
     }
 
+    @font-face {
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: bold;
+        src: url('assets/fonts/Roboto-BoldItalic.ttf');
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        src: url('assets/fonts/Roboto-Regular.ttf');
+    }
+
+    @font-face {
+        font-family: "Roboto";
+        font-style: italic;
+        src: url('assets/fonts/Roboto-Italic.ttf');
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-weight: 300;
+        src: url('assets/fonts/Roboto-Light.ttf');
+    }
+
+    @font-face {
+        font-family: "Roboto";
+        font-style: italic;
+        font-weight: 300;
+        src: url('assets/fonts/Roboto-LightItalic.ttf');
+    }
+
     html, body, #app, #app > *, .base > * {
         margin: 0;
         padding: 0;

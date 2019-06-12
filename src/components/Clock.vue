@@ -75,6 +75,7 @@
         line-height: 1.1;
 
         text-align: center;
+        text-shadow: 0 4px 8px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.08);
     }
 
     .clock.small {

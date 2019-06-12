@@ -2,7 +2,7 @@ const translations = {
     // English
     'en': {
         trigger: 'Press Space or Enter to login',
-        password: 'Password...',
+        password: 'Password',
 
         shutdown: 'Shutting down...',
         suspend: 'Suspending...',

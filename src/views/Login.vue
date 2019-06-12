@@ -260,7 +260,7 @@
 
         font-size: 22px;
         font-weight: 300;
-        font-style: italic;
+        font-style: normal;
 
         text-align: center;
 

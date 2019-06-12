@@ -78,7 +78,7 @@
     @import '../theme';
 
     .setup {
-        font-family: 'Lato', 'Noto Sans', sans-serif;
+        font-family: 'Roboto', 'Lato', 'Noto Sans', sans-serif;
         font-weight: 300;
         font-style: italic;
 

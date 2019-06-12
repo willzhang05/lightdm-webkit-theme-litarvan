@@ -54,7 +54,7 @@
     }
 
     #trigger {
-        font-family: 'Lato', 'Noto Sans', serif;
+        font-family: 'Roboto', 'Lato', 'Noto Sans', serif;
         font-weight: 300;
         font-style: italic;
         font-size: 32px;

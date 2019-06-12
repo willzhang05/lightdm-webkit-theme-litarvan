@@ -74,7 +74,7 @@
 
     .item {
         font-family: 'Lato', 'Noto Sans', sans-serif;
-        font-style: italic;
+        font-style: normal;
 
         border-radius: 5px;
         transition: background-color 125ms ease-in-out;

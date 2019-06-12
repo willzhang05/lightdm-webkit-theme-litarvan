@@ -70,7 +70,7 @@
     }
 
     #power-text {
-        font-family: 'Lato', 'Noto Sans', serif;
+        font-family: 'Roboto', 'Lato', 'Noto Sans', serif;
         font-style: italic;
         font-weight: normal;
         color: $outer-foreground;
