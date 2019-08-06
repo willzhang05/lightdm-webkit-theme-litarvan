@@ -1,13 +1,18 @@
 <template>
-    <div class="checkbox" :class="{ 'checked': checked }" @click="update">
+    <div class="checkbox" @click="update" ref="box">
     </div>
 </template>
 
 <script>
+    import { getColor } from '../themer';
+
     export default {
         name: 'checkbox',
         props: ['value'],
 
+        mounted() {
+            this.updateStyle();
+        },
         data() {
             return {
                 checked: this.value
@@ -17,6 +22,17 @@
         methods: {
             update() {
                 this.$emit('input', this.checked = !this.checked);
+                this.updateStyle();
+            },
+            updateStyle() {
+                const style = this.$refs.box.style;
+                const color = this.checked ? getColor('primary') : null;
+
+                style['border-color'] = color;
+                style['background'] = color;
+
+                console.log(color);
+                console.log(style);
             }
         }
     }
@@ -26,7 +42,7 @@
     @import '../theme';
 
     .checkbox {
-        border: solid 2px $secondary-color;
+        border: solid 2px;
         border-radius: 2px;
 
         transition: border-color 150ms ease-in-out, background 125ms ease-in-out;

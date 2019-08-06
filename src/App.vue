@@ -26,6 +26,7 @@
 
     html.lightdm {
         background: $outer-background !important;
+        color: $secondary-color;
     }
 
     /* HiDPI */
@@ -111,8 +112,6 @@
         -moz-osx-font-smoothing: grayscale;
 
         text-align: center;
-
-        color: $secondary-color;
     }
 
     .fade-enter-active, .fade-leave-active {
