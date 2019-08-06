@@ -17,7 +17,9 @@ const translations = {
         disableAvatar: 'Disable avatar',
         disableZoom: 'Disable x2 zoom (large screen fix)',
         clock12: '12-hours clock format',
-        capsLock: 'Caps lock is enabled'
+        capsLock: 'Caps lock is enabled',
+
+        primaryColor: 'Primary color'
     },
 
     // French
@@ -37,7 +39,9 @@ const translations = {
         disableAvatar: 'Désactiver l\'avatar',
         disableZoom: 'Désactiver le zoom x2 (fix des grands écrans)',
         clock12: 'Format 12 heures de l\'horloge',
-        capsLock: 'Verrouillage des majuscules activé'
+        capsLock: 'Verrouillage des majuscules activé',
+
+        primaryColor: 'Couleur principale'
     },
 
     // Dutch (TODO)
@@ -107,7 +111,13 @@ function getLocale()
 
 function trans(key)
 {
-    return translations[getLocale().substring(0, 2)][key];
+    const result = translations[getLocale().substring(0, 2)][key];
+
+    if (!result) {
+        return translations.en[key];
+    }
+
+    return result;
 }
 
 export {
