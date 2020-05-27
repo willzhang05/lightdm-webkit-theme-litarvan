@@ -5,11 +5,24 @@ const DEBUG_PASSWORD = 'test';
 window.lightdm_debug = window.lightdm === undefined;
 
 if (window.lightdm_debug) {
+    window.theme_utils = {
+        dirlist(_) {
+            return [];
+        }
+    };
+
+    window.greeter_config = {
+        branding: {
+            background_images: 'no where this is live test'
+        }
+    };
+
     window.lightdm = {
         is_authenticated: false,
         authentication_user: undefined,
         default_session: 'plasma-shell',
         can_suspend: true,
+        can_hibernate: true,
         sessions: [
             {
                 name: 'KDE 5',
@@ -30,6 +43,10 @@ if (window.lightdm_debug) {
             {
                 name: 'i3wm',
                 key: 'i3'
+            },
+            {
+                name: 'awesome wm',
+                key: 'awesome'
             },
             {
                 name: 'xmonad',
@@ -81,6 +98,9 @@ if (window.lightdm_debug) {
         },
         shutdown: () => {
             alert('(DEBUG: System is shutting down)')
+        },
+        hibernate: () => {
+            alert('(DEBUG: System is hibernating)')
         },
         suspend: () => {
             alert('(DEBUG: System is suspending)')

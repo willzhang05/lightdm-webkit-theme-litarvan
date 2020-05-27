@@ -46,6 +46,12 @@
         name: 'setup',
         components: { PowerButton, Login, Checkbox },
 
+        mounted() {
+            if (settings.first) {
+                settings.first = false;
+                save();
+            }
+        },
         data() {
             return {
                 settings: settings,
@@ -104,7 +110,7 @@
     .layout {
         display: inline-block;
 
-        border: solid 2px $outer-foreground;
+        border: solid 2px darken($outer-foreground, 60);
         border-radius: 2px;
         transition: border-color 125ms ease-in-out;
 
@@ -118,11 +124,13 @@
 
     .layout:hover {
         cursor: pointer;
-        border-color: lighten($primary-color, 25);
+        // border-color: lighten($primary-color, 25);
+        border-color: darken($outer-foreground, 30);
     }
 
     .layout.selected {
-        border-color: $primary-color;
+        // border-color: $primary-color;
+        border-color: $outer-foreground;
     }
 
     #classic-layout {

@@ -1,6 +1,6 @@
 <template>
     <div class="base">
-        <div class="bg" :class="{ blured: isBlured() }">
+        <div class="bg" :class="{ blured: isBlured() }" :style="{ 'background-image': 'url(' + background + ')' }">
         </div>
 
         <transition name="fade">
@@ -10,9 +10,16 @@
 </template>
 
 <script>
+    import { background } from '../themer';
+
     export default {
         name: 'l-base',
 
+        data() {
+            return {
+                background
+            };
+        },
         methods: {
             isBlured() {
                 let name = this.$router.currentRoute.name;
@@ -26,9 +33,7 @@
     @import '../theme';
 
     .bg {
-        background-image: $background-image;
         background-size: cover;
-        position: fixed;
         left: 0;
         right: 0;
 
@@ -37,6 +42,8 @@
         height: 100vh;
 
         z-index: -1;
+
+        filter: blur(0px);
         transition: filter 500ms ease-in-out;
 
         color: $secondary-color;
@@ -44,5 +51,17 @@
 
     .blured {
         filter: blur(10px);
+    }
+
+    @media screen and (max-width: 2000px) {
+        .bg {
+            position: fixed;
+        }
+    }
+
+    @media screen and (min-width: 2001px) {
+        .bg {
+            position: absolute;
+        }
     }
 </style>

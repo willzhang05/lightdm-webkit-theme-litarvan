@@ -104,12 +104,21 @@
 
         height: 100vh;
 
-        overflow-y:hidden;
+        overflow-y: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        cursor: default;
+    }
+
+    img {
+        -webkit-user-drag: none;
     }
 
     #app {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        -webkit-user-select: none;
 
         text-align: center;
     }

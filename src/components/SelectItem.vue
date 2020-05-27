@@ -1,5 +1,5 @@
 <template>
-    <div class="item" :class="{ 'user': mode === 'user', 'desktop': mode === 'desktop', 'selected': selected }" @click="select()">
+    <div class="item" :class="{ 'user': mode === 'user', 'desktop': mode === 'desktop', 'selected': selected }" v-theming="['border-bottom-color']" @click="select()">
         <div class="icon-container" v-if="!noicon">
             <img class="icon" :src="icon()" />
         </div>
@@ -56,6 +56,8 @@
                         icon = 'xmonad';
                     } if (key.indexOf('budgie') > -1 || key.indexOf('solus') > -1) {
                         icon = 'budgie';
+                    } if (key.indexOf('awesome') > -1) {
+                        icon = 'awesome';
                     }
 
                     if (!icon) {
@@ -70,8 +72,6 @@
 </script>
 
 <style lang="scss" scoped>
-    @import '../theme';
-
     .item {
         font-family: 'Lato', 'Noto Sans', sans-serif;
         font-style: normal;
@@ -83,7 +83,7 @@
     }
 
     .item.selected {
-        border-bottom: solid 2px $primary-color;
+        border-bottom: solid 2px;
         background: rgba(255, 255, 255, 0.055);
     }
 

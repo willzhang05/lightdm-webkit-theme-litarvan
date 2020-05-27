@@ -5,10 +5,12 @@ const translations = {
         password: 'Password',
 
         shutdown: 'Shutting down...',
+        hibernate: 'Hibernating...',
         suspend: 'Suspending...',
         restart: 'Rebooting...',
 
         setup: 'Setup',
+        theming: 'Theming',
         disableSplash: 'Disable splash ("Press Enter" screen)',
         disableSplashText: 'Disable splash text (clock only)',
         disableIntro: 'Disable intro (OS logo)',
@@ -19,7 +21,9 @@ const translations = {
         clock12: '12-hours clock format',
         capsLock: 'Caps lock is enabled',
 
-        primaryColor: 'Primary color'
+        primaryColor: 'Primary color',
+        randomizeBG: 'Select a random one each time',
+        bgAdd: 'Backgrounds can be added in:'
     },
 
     // French
@@ -27,10 +31,12 @@ const translations = {
         trigger: 'Appuyez sur Espace ou Entrée pour vous connecter',
         password: 'Mot de passe...',
         shutdown: 'Arrêt...',
+        hibernate: 'Hibernation...',
         suspend: 'Mise en veille...',
         restart: 'Redémarrage...',
 
         setup: 'Réglages',
+        theming: 'Personnalisation',
         disableSplash: 'Désactiver le splash (écran "Appuyez sur entrer")',
         disableSplashText: 'Désactiver le texte du splash (seulement l\'horloge)',
         disableIntro: 'Désactiver l\'introduction (logo de l\'OS)',
@@ -41,7 +47,9 @@ const translations = {
         clock12: 'Format 12 heures de l\'horloge',
         capsLock: 'Verrouillage des majuscules activé',
 
-        primaryColor: 'Couleur principale'
+        primaryColor: 'Couleur principale',
+        randomizeBG: 'En choisir un au hasard à chaque fois',
+        bgAdd: 'Des fonds peuvent être ajoutés dans :'
     },
 
     // Dutch (TODO)
@@ -89,6 +97,29 @@ const translations = {
         password: 'Contraseña...'
     },
 
+    // Hebrew (TODO)
+    'he': {
+        trigger: 'לחץ על רווח או Enter כדי להכנס',
+        password: 'ססמה...',
+
+        shutdown: 'מכבה...',
+        suspend: 'משהה...',
+        restart: 'מפעיל מחדש...',
+
+        setup: 'הגדרות',
+        disableSplash: 'בטל מסך קדמי (מסך "לחץ Enter")',
+        disableSplashText: 'בטל טקסט של מסך קדמי (רק שעון)',
+        disableIntro: 'בטל הקדמה (סמל מערגת הפעלה)',
+        disableFade: 'בטל עמעום לשחור בכניסה',
+        roundAvatar: 'יצגן עגול',
+        disableAvatar: 'בטל יצגן',
+        disableZoom: 'בטל מיקוד x2 (תיקון למסך גדול)',
+        clock12: 'תבנית שעון של 12 שעות',
+        capsLock: 'נעילת Caps פעילה',
+
+        primaryColor: 'צבע ראשי'
+    },
+
     // More ? PR opens !
 };
 
@@ -111,7 +142,12 @@ function getLocale()
 
 function trans(key)
 {
-    const result = translations[getLocale().substring(0, 2)][key];
+    let lang = translations[getLocale().substring(0, 2)];
+    if (!lang) {
+        lang = translations['en'];
+    }
+
+    const result = lang[key];
 
     if (!result) {
         return translations.en[key];
